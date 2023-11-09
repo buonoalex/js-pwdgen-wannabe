@@ -17,6 +17,11 @@ document.getElementById("surnameFirstBlock").innerHTML = surname;
 document.getElementById("passwordBassLevel").innerHTML = passwordBassLevel
 
 //Visualizzare il risultato del prompt in HTML Medium Level
-document.getElementById("nameFirstBlock").innerHTML = name;
-document.getElementById("surnameFirstBlock").innerHTML = surname;
-document.getElementById("passwordBassLevel").innerHTML = passwordMediumLevel
+document.getElementById("nameSecondBlock").innerHTML = name;
+document.getElementById("surnameSecondBlock").innerHTML = surname;
+document.getElementById("passwordMediumLevel").innerHTML = passwordMediumLevel
+
+//Visualizzare il risultato del prompt in HTML Hard Level
+document.getElementById("nameThirdBlock").innerHTML = name;
+document.getElementById("surnameThirdBlock").innerHTML = surname;
+document.getElementById("passwordHardLevel").innerHTML = passwordMediumLevel
