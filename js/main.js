@@ -36,7 +36,7 @@ function GenerateMediumLevel(){
     let numberFirst = Number(prompt("Inserisci il primo numero:"));
     let numberSecond = Number(prompt("Inserisci il secondo numero:"));
 
-    let passwordMediumLevel = CreaPassMedium(name,surname,numberFirst,numberSecond);
+    let passwordMediumLevel = PassMedioLevel(name,surname,numberFirst,numberSecond);
     //let passwordMediumLevel = name +""+surname + CalcoloMedio(numberFirst,numberSecond);
 
     document.getElementById("nameSecondBlock").innerHTML = name; 
@@ -69,15 +69,15 @@ bottonHardLevel.addEventListener('click', GenerateHardLevel);
 //Altre Funzioni
 
 //Funzione calcolo medio 
-function CalcoloMedio(x , y){
+function PassMedioLevel(name,surname,x , y){
 
     let scambio = 0;
-    let risultato = 0;
+    let risultato = "null";
 
     if (y == 0 || x == 0)
     {
         MostraAlert();
-        risultato = 0;
+        risultato = "Errore RIPROVA";
         console.log("Errore 0")
     }
     else if (x<y)
@@ -86,7 +86,7 @@ function CalcoloMedio(x , y){
         x = y;
         y = scambio
         console.log("Abbiamo scambio");
-        risultato = x/y;
+        risultato = name +""+surname+ x/y;
     }
 
     return risultato;
@@ -98,21 +98,5 @@ function MostraAlert(){
     console.log("alert lanciato");
 }
 
-function CreaPassMedium(name ,surname , x ,y ){
 
-    let passwordMediumLevel = "null";
-
-    if ((CalcoloMedio(x/y)) != 0)
-    {
-        passwordMediumLevel = name + surname + CalcoloMedio(x/y);
-    }else
-    {
-        passwordMediumLevel = "ERRORE riprova";
-    }
-
-    console.log("Crea pass medium eseguita");
-
-    return passwordMediumLevel;
-
-}
 
