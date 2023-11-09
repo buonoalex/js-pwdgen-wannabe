@@ -18,6 +18,8 @@ function GenerateHardLevel(){
 
     let passwordHardLevel = name +""+surname + casualNumber;
 
+
+
     document.getElementById("nameThirdBlock").innerHTML = name; 
     document.getElementById("surnameThirdBlock").innerHTML = surname; 
     document.getElementById("passwordHardLevel").innerHTML = passwordHardLevel; 
@@ -34,8 +36,8 @@ function GenerateMediumLevel(){
     let numberFirst = Number(prompt("Inserisci il primo numero:"));
     let numberSecond = Number(prompt("Inserisci il secondo numero:"));
 
-
-    let passwordMediumLevel = name +""+surname + CalcoloMedio(numberFirst,numberSecond);
+    let passwordMediumLevel = CreaPassMedium(name,surname,numberFirst,numberSecond);
+    //let passwordMediumLevel = name +""+surname + CalcoloMedio(numberFirst,numberSecond);
 
     document.getElementById("nameSecondBlock").innerHTML = name; 
     document.getElementById("surnameSecondBlock").innerHTML = surname; 
@@ -75,8 +77,8 @@ function CalcoloMedio(x , y){
     if (y == 0 || x == 0)
     {
         MostraAlert();
-        console.log("Errore 0")
         risultato = 0;
+        console.log("Errore 0")
     }
     else if (x<y)
     {
@@ -94,5 +96,23 @@ function CalcoloMedio(x , y){
 function MostraAlert(){
     alert("C'e stato un ERRORE non puoi divedere un numero per 0. (Riprova)");
     console.log("alert lanciato");
+}
+
+function CreaPassMedium(name ,surname , x ,y ){
+
+    let passwordMediumLevel = "null";
+
+    if ((CalcoloMedio(x/y)) != 0)
+    {
+        passwordMediumLevel = name + surname + CalcoloMedio(x/y);
+    }else
+    {
+        passwordMediumLevel = "ERRORE riprova";
+    }
+
+    console.log("Crea pass medium eseguita");
+
+    return passwordMediumLevel;
+
 }
 

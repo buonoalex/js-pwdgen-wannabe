@@ -3,3 +3,8 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.bg-main{
+    background-image: url(https://i.pinimg.com/550x/5b/84/c6/5b84c676365a136085f74ad9efbbbb9c.jpg);
+    background-size: contain;
+}
