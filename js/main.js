@@ -7,7 +7,7 @@ let numberFirst = Number(prompt("Inserisci il primo numero:"));
 let numberSecond = Number(prompt("Inserisci il secondo numero:"));
 
 //Elaborazione
-let numberCalcolatedMedium = Math.trunc(CalcoloMedio(numberFirst,numberSecond))
+let numberCalcolatedMedium = CalcoloMedio(numberFirst,numberSecond)
 let numberCalcolatedHard = Math.floor(Math.random() * 10000);
 let passwordBassLevel = name + "" + surname + 21
 let passwordMediumLevel = name + "" + surname + numberCalcolatedMedium
@@ -34,23 +34,27 @@ function CalcoloMedio(x , y){
     let scambio = 0;
     let risultato = 0;
 
-    //ControlloZero(y);
-
-    if (x<y){
+    if (y == 0)
+    {
+        MostraAlert();
+        console.log("Errore 0")
+        risultato = 0;
+    }
+    else if (x<y)
+    {
         scambio = x;
         x = y;
-        y = scambio;
+        y = scambio
+        console.log("Abbiamo scambio");
+        risultato = x/y;
     }
 
-    risultato = x/y;
     return risultato;
 }
 
 
-//Funzione controllo errore divisione 0
-/*function ControlloZero(z){
-    let avviso = "null";
-    if(z = 0){
-        avviso = "C'e stato un ERRORE non puoi divedere un numero per 0. (Riprova)"
-    }
-}*/
+function MostraAlert(){
+    alert("C'e stato un ERRORE non puoi divedere un numero per 0. (Riprova)");
+    console.log("alert lanciato");
+}
+
