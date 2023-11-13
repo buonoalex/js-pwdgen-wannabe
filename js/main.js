@@ -68,11 +68,18 @@ bottonHardLevel.addEventListener('click', GenerateHardLevel);
 
 //Altre Funzioni
 
-//Funzione calcolo medio 
+//Funzione Pass Generated Medio
 function PassMedioLevel(name,surname,x , y){
 
     let scambio = 0;
     let risultato = "null";
+
+    if(x<y){
+        scambio = x;
+        x = y;
+        y = scambio
+        console.log("Abbiamo scambio");
+    }
 
     if (y == 0 || x == 0)
     {
@@ -80,13 +87,9 @@ function PassMedioLevel(name,surname,x , y){
         risultato = "Errore RIPROVA";
         console.log("Errore 0")
     }
-    else if (x<y)
+    else
     {
-        scambio = x;
-        x = y;
-        y = scambio
-        console.log("Abbiamo scambio");
-        risultato = name +""+surname+ x/y;
+        risultato = name +""+surname+ Math.round(x/y);
     }
 
     return risultato;
