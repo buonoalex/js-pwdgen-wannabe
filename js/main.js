@@ -1,7 +1,7 @@
 // Questo è il file che contiene tutto il codice JS della pagina web
 
 //Dichiarazioni variabili 
-const ebottonBassLevel = document.getElementById(bottonBassLevel);
+const ebottonBaseLevel = document.getElementById(bottonBaseLevel);
 const mbottonMediumLevel = document.getElementById(bottonMediumLevel);
 const hbottonHardLevel = document.getElementById(bottonHardLevel);
 
@@ -13,7 +13,7 @@ function GenerateHardLevel(){
     let surname = prompt("Inserisci il tuo cognome:");
    
 
-    let casualNumber = Math.floor(Math.random() * 10000);
+    let casualNumber = Math.floor(Math.random() * 10001);
 
 
     let passwordHardLevel = name +""+surname + casualNumber;
@@ -46,22 +46,22 @@ function GenerateMediumLevel(){
 }
 
 
-//Funzione Generazione Pass Bass Level
-function GenerateBassLevel(){
+//Funzione Generazione Pass Base Level
+function GenerateBaseLevel(){
 
     let name = prompt("Inserisci il tuo nome:");
     let surname = prompt("Inserisci il tuo cognome:");
   
-    let passwordBassLevel = name +""+surname + 21;
+    let passwordBaseLevel = name +""+surname + 21;
 
     document.getElementById("nameFirstBlock").innerHTML = name; 
     document.getElementById("surnameFirstBlock").innerHTML = surname; 
-    document.getElementById("passwordBassLevel").innerHTML = passwordBassLevel; 
-    console.log("Bass-Level eseguita correttamente");
+    document.getElementById("passwordBaseLevel").innerHTML = passwordBaseLevel; 
+    console.log("Base-Level eseguita correttamente");
 }
 
 //Eventi bottoni
-bottonBassLevel.addEventListener('click', GenerateBassLevel);
+bottonBaseLevel.addEventListener('click', GenerateBaseLevel);
 bottonMediumLevel.addEventListener('click', GenerateMediumLevel);
 bottonHardLevel.addEventListener('click', GenerateHardLevel);
 
@@ -85,11 +85,12 @@ function PassMedioLevel(name,surname,x , y){
     {
         MostraAlert();
         risultato = "Errore RIPROVA";
-        console.log("Errore 0")
+        console.log("Errore 0");
     }
     else
     {
         risultato = name +""+surname+ Math.round(x/y);
+        console.log("Stampa numero divisione medium");
     }
 
     return risultato;
